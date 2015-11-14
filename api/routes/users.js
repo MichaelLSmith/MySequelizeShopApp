@@ -22,7 +22,21 @@ router.get('/:userId',function(req,res){
      });
 });
 
-router.post('/',function(req,res){
+router.post('admin_login', function (req,res){
+    console.log('POST /login request');
+
+    console.log('request: '+req);
+    console.log('response: '+res);
+
+    //checks to see if user exists in db.
+    //if user exists, it will send back an auth token.
+    //if user doesn't exists a message will be output saying
+    //can't find user.
+
+    var adminCheck_obj = {}; 
+})
+
+router.post('/createDummyUser',function(req,res){
 	var user_obj = {
 		email:'r2@shop.ca',
 		password:'123'

@@ -1,0 +1,40 @@
+<div class="adminContainer">
+    <header class="innerContainer">
+        <h1 class="centreText">For King and Country</h1>
+            <nav class="nav">
+              <ul>  
+                    <li><a href="/#/admin">Admin Page</a></li>
+                    <li><a href="/#/login">Admin Login</a></li>
+                </ul>
+            </nav>
+    </header>
+
+    <section class="innerContainer">
+        <div class="row">
+            <div class="twelve columns">
+                <table class="u-full-width">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Purchase</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="product in Ctrl.products">
+                            <td>{{product.name}}</td>
+                            <td>{{product.description}}</td>
+                            <td>${{product.price}}</td>
+                            <td>
+                                <a class="button-primary" href="/#/view_product/{{product.productId}}">
+                                    View Product
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>   
+            </div>
+        </div>    
+    </section>
+</div> 

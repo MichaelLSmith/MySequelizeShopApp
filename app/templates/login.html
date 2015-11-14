@@ -1,0 +1,19 @@
+<section class="adminContainer">
+    <div class="loginContainer">
+        <div class="row">
+            <div class="twelve columns">
+                <h1>
+                    Admin Login
+                </h1>
+                <form ng-submit="Ctrl.authenticate(user,password)">
+                    <fieldset class="innerContainer">
+                        <input type="text" placeholder="Email" ng-model="user">
+                        <input type="password" placeholder="Password" ng-model="password">
+                        <button>Login</button>
+                    </fieldset>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

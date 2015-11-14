@@ -1,0 +1,48 @@
+<div class="adminContainer">
+    <header class="innerContainer">
+        <div class="row">
+            <div class="twelve columns">
+                <h1 class="centreText">{{Ctrl.product.name}}</h1>
+                <hr>
+            </div>
+        </div>
+    </header>
+    <main class="innerContainer">
+        <section class="row">
+                <div class="six columns">
+                        <img class="responsiveImage" ng-src="{{Ctrl.product.image}}">
+                </div>
+    
+                <div class="six columns">
+                    {{Ctrl.product.description}}
+                </div>
+        </section>
+        <section class="row">
+            <table class="twelve columns">
+                <tr>
+                    <th><strong>Price</strong></th>
+                    <th><stong>Product Category</stong></th>
+                    <th><strong>Quantity for Purchase</strong></th>
+                </tr>
+                <tr>
+                    <td>${{Ctrl.product.price}}</td>
+                    <td>{{Ctrl.product.category}}</td>
+                    <td>
+                        <form ng-submit="Ctrl.returnProductObject()">
+                            <input class="quantityInput" id="quantity" type="number">
+                            <button class="button-primary">Add to Cart</button>
+                        </form>
+                    </td>
+                    
+                </tr>
+                
+            </table>            
+        </section>
+    
+        <section>
+            <a class="button button-primary" href="/#/cart">View Cart</a>
+            <br>
+            <a href="/#/">Back to Products List</a>
+        </section>
+    </main>
+</div>

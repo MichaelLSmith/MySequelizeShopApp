@@ -46,6 +46,8 @@ router.post('/admin_login',function (req,res){
             password: passWord
         }
     }).then(function (user){
+        console.log('user: '+ user);
+        // util.inspect(user, false, null)
         res.json({
             users:user
         })

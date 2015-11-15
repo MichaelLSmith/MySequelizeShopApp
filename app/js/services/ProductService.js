@@ -9,7 +9,7 @@ function ProductService(api){
 
 ProductService.prototype.retrieveProducts = function(){
 	var self = this;
-	console.log('localStorage =' + localStorage)
+	console.log('retrieveProducts =' + localStorage)
 	return this.api.request('/api/products/',{},'GET');
 }
 
@@ -17,13 +17,12 @@ ProductService.prototype.setProducts = function(products){
 	//store the products in local storage so you don't have to make an API
 	//request each time you are on this page.
 	localStorage.setItem('products',JSON.stringify(products));
-	console.log(localStorage);
 	this.products = products;
+	console.log('setProducts: '+ this.products);
 }
 
 ProductService.prototype.getProducts = function(){
 	var self = this;
-	console.log(localStorage);
 	//if there are no products stored in localStorage
 	//grab them from the API,store them in localStorage
 	//and pass back the products as a promise

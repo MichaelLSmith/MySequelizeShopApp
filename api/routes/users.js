@@ -1,6 +1,7 @@
 var models = require('../models');
 var express = require('express');
 var router = express.Router();
+var util = require('util');
 
 router.get('/',function(req,res){
 	models.Users.findAll().then(function(users){
@@ -22,11 +23,34 @@ router.get('/',function(req,res){
 //      });
 // });
 
-router.post('/admin_login', function (req,res){
+router.post('/admin_login',function (req,res){
     console.log('POST /admin_login request');
 
-    console.log('request: '+req.data);
-    console.log('response: '+res.data);
+    
+    //how to get the entire object, rather than [Object, Object]
+    //reliant on the util module
+    // console.log('request: '+ util.inspect(req, false, null));
+    console.log(req.body);
+
+    var parsedData = JSON.parse(req.body.data);
+    console.log(parsedData);
+
+    var userName = parsedData.username;
+    console.log('userName: '+userName);
+    var passWord = parsedData.password;
+    console.log('passWord: '+passWord);
+
+    models.Users.findAll({
+        where: { 
+            email: userName,
+            password: passWord
+        }
+    }).then(function (user){
+        res.json({
+            users:user
+        })
+    })
+
 
     //checks to see if user exists in db.
     //if user exists, it will send back an auth token.
@@ -36,7 +60,7 @@ router.post('/admin_login', function (req,res){
     
 
     var adminCheck_obj = {}; 
-})
+});
 
 router.get('/createDummyUser',function (req,res){
     console.log('GET createDummyUser req: '+ req);

@@ -7,7 +7,7 @@ function ProductCtrl(productService){
 ProductCtrl.prototype.refreshProducts = function(){
     localStorage.removeItem('products');
     localStorage.removeItem('authToken');
-    console.log(localStorage);
+    console.log('refreshProducts: '+localStorage);
 }
 
 ProductCtrl.prototype.addProduct = function(name,description,image,price,category,quantity,status){

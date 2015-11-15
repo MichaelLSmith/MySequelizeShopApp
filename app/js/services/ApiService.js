@@ -17,6 +17,7 @@ ApiService.prototype.request = function(endpoint,data,method) {
   if(method == 'POST'){
     data = JSON.stringify(data);
     data = this.serializeData({'data':data});
+    console.log('stringified data: '+data);
     return this.http.post(BASE_URL + endpoint,data,HEADERS)
   }
   else if(method == 'GET'){

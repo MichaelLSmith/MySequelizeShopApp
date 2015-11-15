@@ -7,7 +7,7 @@ angular.module('ShopApp').service('api', ApiService);
 
 
 //constants
-var BASE_URL = 'http://127.0.0.1:8080';
+var BASE_URL = 'http://localhost:8080';
 var HEADERS = {headers : {'Content-Type': 'application/x-www-form-urlencoded'}};
 
 

@@ -22,8 +22,8 @@ router.get('/',function(req,res){
 //      });
 // });
 
-router.post('admin_login', function (req,res){
-    console.log('POST /login request');
+router.post('/admin_login', function (req,res){
+    console.log('POST /admin_login request');
 
     console.log('request: '+req.data);
     console.log('response: '+res.data);
@@ -32,6 +32,8 @@ router.post('admin_login', function (req,res){
     //if user exists, it will send back an auth token.
     //if user doesn't exists a message will be output saying
     //can't find user.
+
+    
 
     var adminCheck_obj = {}; 
 })

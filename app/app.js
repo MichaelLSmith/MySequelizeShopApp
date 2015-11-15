@@ -5,17 +5,17 @@ app.config(function($routeProvider,$httpProvider){
 		templateUrl:'templates/home.html',
 		controller:'MainCtrl as Ctrl',
         resolve:{
-            path:function($location){
-                    if(localStorage.getItem('authToken') == null){
-                        $location.path('/login');
-                    }
-                },
+            // path:function($location){
+            //         if(localStorage.getItem('authToken') == null){
+            //             $location.path('/login');
+            //         }
+            //     },
             products:function(productService){
                     return productService.getProducts();
                 }
             }
 	})
-	.when('/login',{
+	.when('/admin_login',{
 		templateUrl:'templates/login.html',
 		controller:'AuthCtrl as Ctrl'
 	})
@@ -23,11 +23,11 @@ app.config(function($routeProvider,$httpProvider){
 		templateUrl:'templates/admin.html',
 		controller:'AdminCtrl as Ctrl',
 		resolve:{
-			path:function($location){
-					if(localStorage.getItem('authToken') == null){
-						$location.path('/login');
-					}
-				},
+			// path:function($location){
+			// 		if(localStorage.getItem('authToken') == null){
+			// 			$location.path('/admin_login');
+			// 		}
+			// 	},
 			products:function(productService){
 					return productService.getProducts();
 				}

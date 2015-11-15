@@ -11,7 +11,7 @@ AuthCtrl.prototype.authenticate = function(username,password){
 		password:password
 	};
 
-	this.api.request('/admin_login',request_body,'POST')
+	this.api.request('api/admin_login',request_body,'POST')
 	.then(function(response) {
       console.log(response);
       if(response.data.authToken != 'Invalid Credentials'){

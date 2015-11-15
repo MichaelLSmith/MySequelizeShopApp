@@ -10,13 +10,14 @@ ProductCtrl.prototype.refreshProducts = function(){
     console.log(localStorage);
 }
 
-ProductCtrl.prototype.addProduct = function(name,description,price,category,quantity,status){
+ProductCtrl.prototype.addProduct = function(name,description,image,price,category,quantity,status){
 	//create the api request that makes the product on the backend
 	//as part of your response you need to add it to your current
 	//product array using the product service
 	var request_body = {
 		name:name,
 		description:description,
+		image:image,
 		price:price,
 		category:category,
 		quantity:quantity,

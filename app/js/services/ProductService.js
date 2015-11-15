@@ -10,7 +10,7 @@ function ProductService(api){
 ProductService.prototype.retrieveProducts = function(){
 	var self = this;
 	console.log('localStorage =' + localStorage)
-	return this.api.request('/retrieve_products/team3',{},'GET');
+	return this.api.request('/api/products/',{},'GET');
 }
 
 ProductService.prototype.setProducts = function(products){
@@ -48,7 +48,7 @@ ProductService.prototype.getProducts = function(){
 ProductService.prototype.addProduct = function(product){
  	//TODO: add the new product to the current product list and
  	//return the updated list
-	return this.api.request('/newproduct',product,'POST')
+	return this.api.request('/api/products',product,'POST')
 			.then(function(response){
 				console.log(response);
 			});
